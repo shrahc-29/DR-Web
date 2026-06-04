@@ -44,7 +44,7 @@ export function HeroSection() {
           transition={{ duration: 0.8 }}
         >
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-            AI-Powered{' '}
+            {' '}
             <span className="gradient-text">Diabetic Retinopathy</span>{' '}
             Detection & Grading
           </h1>

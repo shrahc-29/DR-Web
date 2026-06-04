@@ -14,7 +14,7 @@ export function AboutSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">About RetinaVision AI</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">About RetinaVision</h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             Advancing retinal disease screening through cutting-edge deep learning
           </p>
