@@ -4,17 +4,17 @@ import { motion } from 'framer-motion'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
 
 const modelData = [
-  { name: 'ResNet50', accuracy: 96.2, precision: 94.8, recall: 95.5, f1: 95.1 },
-  { name: 'VGG19', accuracy: 94.1, precision: 92.3, recall: 93.7, f1: 93.0 },
-  { name: 'DenseNet121', accuracy: 97.1, precision: 96.2, recall: 96.8, f1: 96.5 },
-  { name: 'EfficientNetB0', accuracy: 95.8, precision: 94.1, recall: 95.2, f1: 94.6 },
+  { name: 'ResNet50 (multi-class)', accuracy: 78, precision: 76, recall: 78, f1: 75 },
+  { name: 'VGG19 (multi-class)', accuracy: 72, precision: 69, recall: 72, f1: 69 },
+  { name: 'DenseNet121 (binary)', accuracy: 77, precision: 79, recall: 77, f1: 76 },
+  { name: 'EfficientNetB0 (binary)', accuracy: 83, precision: 85, recall: 83, f1: 83 },
 ]
 
 const metrics = [
-  { label: 'Binary Detection', value: '97.1%' },
-  { label: 'Multi-class Grading', value: '94.3%' },
-  { label: 'Sensitivity', value: '96.8%' },
-  { label: 'Specificity', value: '97.4%' },
+  { label: 'Binary Detection', value: '83%' },
+  { label: 'Multi-class Grading', value: '78%' },
+  { label: 'Sensitivity', value: '72.42%' },
+  { label: 'Specificity', value: '93.72%' },
 ]
 
 export function ModelPerformanceSection() {
@@ -63,8 +63,11 @@ export function ModelPerformanceSection() {
             <BarChart data={modelData}>
               <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
               <XAxis dataKey="name" stroke="rgba(200,200,200,0.5)" />
-              <YAxis stroke="rgba(200,200,200,0.5)" domain={[90, 98]} />
-              <Tooltip
+              <YAxis
+                stroke="rgba(200,200,200,0.5)"
+                domain={[0, 100]}
+                ticks={[10, 20, 30, 40, 50, 60, 70, 80, 90, 100]}
+              />              <Tooltip
                 contentStyle={{
                   backgroundColor: 'rgba(15, 23, 42, 0.9)',
                   border: '1px solid rgba(34, 211, 238, 0.3)',
