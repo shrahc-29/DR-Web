@@ -13,7 +13,8 @@ export function HeroSection() {
   ]
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
+    // Changed min-h-[80vh] to py-20 to let content define height naturally, and set pb-0 to eliminate the bottom gap
+    <section className="flex items-center justify-center relative overflow-hidden pt-24 pb-8 mb-0">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         {floatingElements.map((el, idx) => (
@@ -54,7 +55,8 @@ export function HeroSection() {
             grading with explainable AI visualization—all in seconds.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          {/* Buttons container has no margin at the bottom */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 href="/analysis"
@@ -75,54 +77,6 @@ export function HeroSection() {
             >
               Learn More
             </motion.button>
-          </div>
-        </motion.div>
-
-        {/* Animated retinal pattern */}
-        <motion.div
-          className="relative w-full h-64 sm:h-80 rounded-2xl overflow-hidden glass mt-12"
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-        >
-          <div className="absolute inset-0 flex items-center justify-center">
-            <svg
-              className="w-full h-full p-8 text-cyan-400/30"
-              viewBox="0 0 400 400"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              {/* Stylized retinal visualization */}
-              <circle cx="200" cy="200" r="150" stroke="currentColor" strokeWidth="2" opacity="0.3" />
-              <circle cx="200" cy="200" r="100" stroke="currentColor" strokeWidth="2" opacity="0.5" />
-              <circle cx="200" cy="200" r="50" fill="currentColor" opacity="0.3" />
-
-              {/* Blood vessel paths */}
-              <path
-                d="M 200 200 Q 250 150 300 120"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                opacity="0.6"
-              />
-              <path
-                d="M 200 200 Q 150 150 100 120"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                opacity="0.6"
-              />
-              <path
-                d="M 200 200 Q 250 250 300 280"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                opacity="0.6"
-              />
-              <path
-                d="M 200 200 Q 150 250 100 280"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                opacity="0.6"
-              />
-            </svg>
           </div>
         </motion.div>
       </div>
